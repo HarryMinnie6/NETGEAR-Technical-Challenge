@@ -19,6 +19,4 @@ application.use(`/${API_PREFIX}`, bookRoute)
 // Returns a nice message for the user here
 application.use(erroHandler);
 
-application.listen(APP_CONSTANTS.port, () => {
-  logger.info(`Server is running on port: ${APP_CONSTANTS.port}`);
-});
+export default application;
