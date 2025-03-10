@@ -9,6 +9,8 @@ services:
       - mynetwork
     ports:
       - "5433:5432" # so this and localhost dont conflict
+    volumes: # creates and populates the tables
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   app:
     image: netgear-challenge-app

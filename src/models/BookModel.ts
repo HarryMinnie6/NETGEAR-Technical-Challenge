@@ -1,14 +1,14 @@
-import { DataTypes, Model } from "sequelize";
-import { sequelize } from "../utils/dbConfig";
+import { DataTypes, Model } from 'sequelize';
+import { sequelize } from '../utils/dbConfig';
 
 export class Book extends Model {
   public id!: number;
   public title!: string;
   public author!: string;
   public genre!: string;
-  public publishedYear!: number;
-  public totalCopies!: number;
-  public copiesAvailable!: number;
+  public published_date!: number;
+  public total_copies!: number;
+  public copies_available!: number;
 }
 
 Book.init(
@@ -30,21 +30,25 @@ Book.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    publishedYear: {
+    published_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        isDate: true,
+      },
+    },
+    total_copies: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    totalCopies: {
+    copies_available: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
     },
-    copiesAvailable: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    }
   },
   {
     sequelize,
     tableName: 'books',
-  }
+    timestamps: false,
+  },
 );

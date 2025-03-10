@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import { logger } from './logger';
 
 dotenv.config();
 
@@ -16,7 +17,8 @@ export const sequelize = new Sequelize(connectionString, {
   logging: false,
   retry: {
     max: 5,
-    match: [ // if i get these errors, server will restart
+    match: [
+      // if i get these errors, server will restart
       /SequelizeConnectionError/,
       /SequelizeConnectionRefusedError/,
     ],
@@ -36,16 +38,16 @@ export const pool = new Pool({
 // Test connection function
 const connectWithRetry = async () => {
   try {
-    console.log('Attempting to connect to PostgreSQL');
+    logger.info('Attempting to connect to PostgreSQL');
     await sequelize.authenticate();
-    console.log('Connected to PostgreSQL');
-  } catch (err) {
-    console.error('Error connecting to PostgreSQL', err);
-    setTimeout(connectWithRetry, 5000);  // Retry connection every 5 seconds
+    logger.info('Connected to PostgreSQL');
+  } catch (error) {
+    logger.error('Error connecting to PostgreSQL', error);
+    setTimeout(connectWithRetry, 5000); // Retry connection every 5 seconds
   }
 };
 
 // Try to connect to PostgreSQL when not in production (for local dev)
 if (!isProduction) {
-  connectWithRetry();  // Initiates retry connection during app start
+  connectWithRetry(); // Initiates retry connection during app start
 }

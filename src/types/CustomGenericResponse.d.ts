@@ -1,5 +1,5 @@
 export interface CustomGenericResponse {
-    statusCode: number;
-    message: string;
-    data?: object
-  }
+  statusCode: number;
+  message: string;
+  data?: object;
+}

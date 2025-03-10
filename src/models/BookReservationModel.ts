@@ -1,5 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
-import { sequelize } from "../utils/dbConfig";
+import { sequelize } from '../utils/dbConfig';
 
 export class BookReservation extends Model {
   public id!: number;
@@ -9,34 +9,35 @@ export class BookReservation extends Model {
   public reserverName!: string;
 }
 
-  BookReservation.init(
-    {
-      id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-      },
-      bookId: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'books',
-          key: 'id',
-        },
-      },
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      reserverName: {
-        type: DataTypes.STRING,
-        allowNull: false,
+BookReservation.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    bookId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'books',
+        key: 'id',
       },
     },
-    {
-      sequelize,
-      tableName: 'book_reservations',
-    }
-  );
-  
-  export default BookReservation;
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    reserverName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    tableName: 'book_reservations',
+    timestamps: false,
+  },
+);
+
+export default BookReservation;
