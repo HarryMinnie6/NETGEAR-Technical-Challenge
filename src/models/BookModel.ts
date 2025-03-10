@@ -31,7 +31,7 @@ Book.init(
       allowNull: true,
     },
     published_date: {
-      type: DataTypes.DATE,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         isDate: true,
