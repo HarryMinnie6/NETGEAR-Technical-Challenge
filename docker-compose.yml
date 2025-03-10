@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: user123
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: book-catalogue
+    networks:
+      - mynetwork
+    ports:
+      - "5433:5432" # so this and localhost dont conflict
+
+  app:
+    image: netgear-challenge-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DB_USER=user123
+      - DB_PASSWORD=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=book-catalogue
+    ports:
+      - "13000:3000"
+    depends_on:
+      - db
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
