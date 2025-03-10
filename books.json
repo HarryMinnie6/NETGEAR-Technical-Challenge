@@ -1,0 +1,83 @@
+[
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Fiction",
+      "published_date": 1925,
+      "total_copies": 10,
+      "copies_available": 7
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "published_date": 1960,
+      "total_copies": 15,
+      "copies_available": 12
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian",
+      "published_date": 1949,
+      "total_copies": 12,
+      "copies_available": 5
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "published_date": 1813,
+      "total_copies": 8,
+      "copies_available": 6
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Fiction",
+      "published_date": 1951,
+      "total_copies": 10,
+      "copies_available": 4
+    },
+    {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "genre": "Adventure",
+      "published_date": 1851,
+      "total_copies": 7,
+      "copies_available": 3
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "genre": "Historical",
+      "published_date": 1869,
+      "total_copies": 5,
+      "copies_available": 2
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "published_date": 1937,
+      "total_copies": 14,
+      "copies_available": 10
+    },
+    {
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "genre": "Psychological Fiction",
+      "published_date": 1866,
+      "total_copies": 9,
+      "copies_available": 7
+    },
+    {
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "genre": "Dystopian",
+      "published_date": 1932,
+      "total_copies": 11,
+      "copies_available": 6
+    }
+  ]
+  
