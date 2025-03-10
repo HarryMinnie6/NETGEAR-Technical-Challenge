@@ -26,7 +26,7 @@ yarn install
 ```
 
 #### Setting up postgresql:
-Setting up postgresql locally (default setup for now is ok)
+Setting up postgresql locally _(default setup for now is ok)_
 
 Login to postgresql via the terminal
 ```
@@ -70,7 +70,7 @@ Step 2: In a new terminal _(at the root of the project)_ run ```docker login```.
 
 Step 3: After successful login run ```docker-compose up --build```.
 
-To stop and remove containers run ```docker-compose down -v```._(Note: this will remove all databases and stored information in postgres)_
+To stop and remove containers run ```docker-compose down -v```._(Note: this will remove all databases and stored information in your container)_
 
 Docker testing url example: ```http://localhost:13000/api/v1/all-books```
 
